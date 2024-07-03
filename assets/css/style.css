@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E5F9E0;
+    font-family: "Quicksand", sans-serif;
+    line-height: 1.6;
+    display: grid;
+    grid-template-areas:
+        "menu filtro"
+        "menu principal"
+        "menu principal"
+        "menu footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #1a5d58;
+    color: #f6fbf4;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu .logo {
+    font-family: "Playwrite AU VIC", cursive;
+    color: #E5F9E0;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.icono {
+    display: none;
+}
+
+.menu ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+.menu ul li {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.menu ul li a {
+    color: #f6fbf4;
+    text-decoration: none;
+}
+
+.filtro {
+    grid-area: filtro;
+    width: 100%;
+    padding: 20px;
+    background-color: #2F9C95;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.filtro label {
+    font-weight: bold;
+}
+
+.filtro select {
+    padding: 5px;
+}
+
+.principal {
+    grid-area: principal;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.producto {
+    background-color: #f6fbf4;
+    padding: 20px;
+    text-align: center;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+}
+
+.producto p {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.producto button {
+    background-color: #1a5d58;
+    color: #E5F9E0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.producto button:hover {
+    background-color: #2F9C95;
+}
+
+.paginas {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagina, .pagina1 {
+    padding: 10px;
+    border: 1px solid #E5F9E0;
+    cursor: pointer;
+}
+
+.pagina1 {
+    background-color: #1a5d58;
+    color: #f6fbf4;
+}
+
+.footer {
+    grid-area: footer;
+    width: 100%;
+    background-color: rgb(52, 47, 47);
+    color: #E5F9E0;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .redes-sociales {
+    margin-top: 10px;
+}
+
+.footer .redes-sociales a {
+    color: #E5F9E0;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer .redes-sociales a:hover {
+    color: #2F9C95;
+}
+
+.footer h1{
+    font-size: medium;
+}
+
+@media (max-width: 992px) {
+    body {
+        grid-template-areas:
+            "menu"
+            "filtro"
+            "principal"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+    }
+
+    .menu {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .icono {
+        display: block;
+    }
+
+    .menu ul {
+        display: none;
+    }
+
+
+    .filtro {
+        justify-content: center;
+    }
+
+
+}
